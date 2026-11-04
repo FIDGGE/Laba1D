@@ -31,6 +31,27 @@ namespace BoringRPG
       Console.WriteLine("======================");
       Console.WriteLine(lancelot.GetInfo());
       Console.WriteLine(illidan.GetInfo());
+
+      Console.WriteLine();
+
+      // =================================//
+      // ЭТАП 2: Использование расходников//
+      // =================================//
+      Console.WriteLine("=== ПРИМЕНЕНИЕ РАСХОДНИКОВ ===");
+
+      // 1. Используем зелье маны
+      ManaPotion manaPotion = new ManaPotion(30);
+      Console.WriteLine($"{illidan.Name} выпивает зелье маны (+{manaPotion.Value} MP)...");
+      illidan += manaPotion;
+      Console.WriteLine(illidan.GetInfo());
+      Console.WriteLine();
+
+      // 2. Использование свитка хаоса (безумный расходник)
+      ScrollOfChaos chaosScroll = new ScrollOfChaos(25);
+      Console.WriteLine($"{illidan.Name} читает запретный Свиток Хаоса!");
+      illidan += chaosScroll;
+      Console.WriteLine(illidan.GetInfo());
+
       Console.ReadKey();
     }
   }

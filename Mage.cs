@@ -47,6 +47,36 @@ namespace BoringRPG
       return mage.HP <= 0;
     }
 
+    //зелье маны
+    public static Mage operator +(Mage mage, ManaPotion potion)
+    {
+      mage.MP += potion.Value;
+      return mage;
+    }
+
+    //зелье здоровья
+    public static Mage operator +(Mage mage, HealthPotion potion)
+    {
+      mage.HP += potion.Value;
+      return mage;
+    }
+
+    //зелье урона
+    public static Mage operator +(Mage mage, DamagePotion potion)
+    {
+      mage.Damage += potion.Value;
+      return mage;
+    }
+
+    //свиток хаоса
+    public static Mage operator +(Mage mage, ScrollOfChaos scroll)
+    {
+      Random rnd = new Random();
+      mage.Damage += rnd.Next(1, scroll.Value);
+      mage.MP += rnd.Next(10, 40);
+      return mage;
+    }
+
     // Метод Hit: наносит урон цели с особенностью мага
     public override void Hit(Archetype target)
     {
