@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoringRPG
 {
-  internal class Mage : Archetype
+  internal class Mage : Archetype, ICanUseSkill
   {
 
     //пример для работы со случайными числами
@@ -107,6 +107,13 @@ namespace BoringRPG
     public override string GetInfo()
     {
       return $"{Name} (Mage): HP {HP}, MP {MP}, Damage {Damage}, Шанс крита {CritChance * 100}%";
+    }
+
+    // метод интерфейса
+    public void UseSkill(Skill skill, Archetype target)
+    {
+      Console.WriteLine($"{Name} применяет навык: {skill.Name} на цель {target.Name}!");
+      skill.Use(this, target);
     }
   }
 }

@@ -58,16 +58,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Archer.cs" />
     <Compile Include="Archetype.cs" />
     <Compile Include="ConsumableItem.cs" />
-    <Compile Include="DamagePotion.cs" />
+    <Compile Include="Consumables\DamagePotion.cs" />
+    <Compile Include="Skills\DramaAction.cs" />
     <Compile Include="DummyClass.cs" />
-    <Compile Include="HealthPotion.cs" />
+    <Compile Include="Consumables\HealthPotion.cs" />
+    <Compile Include="Skills\ICanUseSkill.cs" />
     <Compile Include="Mage.cs" />
-    <Compile Include="ManaPotion.cs" />
+    <Compile Include="Skills\ManaDrain.cs" />
+    <Compile Include="Consumables\ManaPotion.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ScrollOfChaos.cs" />
+    <Compile Include="Consumables\ScrollOfChaos.cs" />
+    <Compile Include="Skill.cs" />
+    <Compile Include="Skills\SoulLink.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
